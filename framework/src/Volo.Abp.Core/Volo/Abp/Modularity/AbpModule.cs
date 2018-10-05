@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// abp模块
+    /// </summary>
     public abstract class AbpModule : 
         IAbpModule,
         IOnPreApplicationInitialization,

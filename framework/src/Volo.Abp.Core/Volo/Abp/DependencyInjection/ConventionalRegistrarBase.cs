@@ -6,6 +6,9 @@ using Volo.Abp.Reflection;
 
 namespace Volo.Abp.DependencyInjection
 {
+    /// <summary>
+    /// 常规注册基类
+    /// </summary>
     public abstract class ConventionalRegistrarBase : IConventionalRegistrar
     {
         public virtual void AddAssembly(IServiceCollection services, Assembly assembly)
@@ -17,7 +20,7 @@ namespace Volo.Abp.DependencyInjection
                             type.IsClass &&
                             !type.IsAbstract &&
                             !type.IsGenericType
-                ).ToArray();
+                ).ToArray();  //获取所有非抽象、非泛型的类
 
             AddTypes(services, types);
         }

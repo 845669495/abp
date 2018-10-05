@@ -6,8 +6,8 @@ namespace Volo.Abp.DynamicProxy
     public static class ProxyHelper
     {
         /// <summary>
-        /// Returns dynamic proxy target object if this is a proxied object, otherwise returns the given object. 
-        /// It supports Castle Dynamic Proxies.
+        /// 如果这是一个代理对象，则返回动态代理目标对象，否则返回给定对象。
+        /// 它支持 Castle Dynamic Proxies.
         /// </summary>
         public static object UnProxy(object obj)
         {

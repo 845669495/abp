@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// abp模块描述
+    /// </summary>
     public interface IAbpModuleDescriptor
     {
         Type Type { get; }

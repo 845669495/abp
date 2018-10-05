@@ -6,6 +6,9 @@ using JetBrains.Annotations;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// abp模块描述
+    /// </summary>
     public class AbpModuleDescriptor : IAbpModuleDescriptor
     {
         public Type Type { get; }
@@ -16,6 +19,9 @@ namespace Volo.Abp.Modularity
 
         public bool IsLoadedAsPlugIn { get; }
 
+        /// <summary>
+        /// 依赖
+        /// </summary>
         public IReadOnlyList<IAbpModuleDescriptor> Dependencies => _dependencies.ToImmutableList();
         private readonly List<IAbpModuleDescriptor> _dependencies;
 
@@ -40,6 +46,10 @@ namespace Volo.Abp.Modularity
             _dependencies = new List<IAbpModuleDescriptor>();
         }
 
+        /// <summary>
+        /// 添加依赖
+        /// </summary>
+        /// <param name="descriptor"></param>
         public void AddDependency(IAbpModuleDescriptor descriptor)
         {
             _dependencies.AddIfNotContains(descriptor);

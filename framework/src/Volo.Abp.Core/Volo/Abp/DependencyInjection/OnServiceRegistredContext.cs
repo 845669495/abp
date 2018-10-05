@@ -5,6 +5,9 @@ using Volo.Abp.DynamicProxy;
 
 namespace Volo.Abp.DependencyInjection
 {
+    /// <summary>
+    /// 在服务注册后上下文
+    /// </summary>
     public class OnServiceRegistredContext : IOnServiceRegistredContext
     {
         public virtual ITypeList<IAbpInterceptor> Interceptors { get; }

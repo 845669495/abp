@@ -1,5 +1,7 @@
 ﻿namespace Volo.Abp.Modularity
 {
+    //模块生命周期贡献者
+
     public class OnApplicationInitializationModuleLifecycleContributer : ModuleLifecycleContributerBase
     {
         public override void Initialize(ApplicationInitializationContext context, IAbpModule module)

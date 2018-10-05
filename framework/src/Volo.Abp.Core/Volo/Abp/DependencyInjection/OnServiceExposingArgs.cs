@@ -4,6 +4,9 @@ using JetBrains.Annotations;
 
 namespace Volo.Abp.DependencyInjection
 {
+    /// <summary>
+    /// 服务暴露时上下文
+    /// </summary>
     public class OnServiceExposingContext : IOnServiceExposingContext
     {
         public Type ImplementationType { get; }

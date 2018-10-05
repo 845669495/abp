@@ -2,6 +2,9 @@
 
 namespace Volo.Abp.Configuration
 {
+    /// <summary>
+    /// 默认配置访问器
+    /// </summary>
     public class DefaultConfigurationAccessor : IConfigurationAccessor
     {
         public static DefaultConfigurationAccessor Empty { get; }

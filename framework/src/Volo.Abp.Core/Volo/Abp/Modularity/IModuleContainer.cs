@@ -3,6 +3,9 @@ using JetBrains.Annotations;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// Ä£¿éÈÝÆ÷
+    /// </summary>
     public interface IModuleContainer
     {
         [NotNull]

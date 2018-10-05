@@ -7,6 +7,11 @@ namespace Volo.Abp.Modularity
 {
     internal static class AbpModuleHelper
     {
+        /// <summary>
+        /// 查找所有模块类型
+        /// </summary>
+        /// <param name="startupModuleType"></param>
+        /// <returns></returns>
         public static List<Type> FindAllModuleTypes(Type startupModuleType)
         {
             var moduleTypes = new List<Type>();
@@ -14,6 +19,11 @@ namespace Volo.Abp.Modularity
             return moduleTypes;
         }
 
+        /// <summary>
+        /// 查找依赖模块类型
+        /// </summary>
+        /// <param name="moduleType"></param>
+        /// <returns></returns>
         public static List<Type> FindDependedModuleTypes(Type moduleType)
         {
             AbpModule.CheckAbpModuleType(moduleType);
@@ -34,7 +44,11 @@ namespace Volo.Abp.Modularity
 
             return dependencies;
         }
-
+        /// <summary>
+        /// 添加模块和递归依赖
+        /// </summary>
+        /// <param name="moduleTypes"></param>
+        /// <param name="moduleType"></param>
         private static void AddModuleAndDependenciesResursively(List<Type> moduleTypes, Type moduleType)
         {
             AbpModule.CheckAbpModuleType(moduleType);

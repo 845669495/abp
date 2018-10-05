@@ -30,6 +30,10 @@ namespace Volo.Abp.Modularity
                 .ToArray();
         }
 
+        /// <summary>
+        /// 初始化模块
+        /// </summary>
+        /// <param name="context"></param>
         public void InitializeModules(ApplicationInitializationContext context)
         {
             LogListOfModules();
@@ -55,6 +59,10 @@ namespace Volo.Abp.Modularity
             }
         }
 
+        /// <summary>
+        /// 关掉模块
+        /// </summary>
+        /// <param name="context"></param>
         public void ShutdownModules(ApplicationShutdownContext context)
         {
             var modules = _moduleContainer.Modules.Reverse().ToList();

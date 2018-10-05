@@ -4,6 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// 服务配置上下文
+    /// </summary>
     public class ServiceConfigurationContext
     {
         public IServiceCollection Services { get; }

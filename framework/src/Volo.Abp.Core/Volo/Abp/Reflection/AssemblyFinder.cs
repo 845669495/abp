@@ -8,6 +8,9 @@ using Volo.Abp.Modularity;
 
 namespace Volo.Abp.Reflection
 {
+    /// <summary>
+    /// 程序集查找
+    /// </summary>
     public class AssemblyFinder : IAssemblyFinder
     {
         private readonly IModuleContainer _moduleContainer;

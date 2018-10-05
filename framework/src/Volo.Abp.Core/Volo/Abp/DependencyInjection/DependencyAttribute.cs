@@ -3,6 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Volo.Abp.DependencyInjection
 {
+    /// <summary>
+    /// 依赖注入属性
+    /// </summary>
     public class DependencyAttribute : Attribute
     {
         public virtual ServiceLifetime? Lifetime { get; set; }

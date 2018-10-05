@@ -2,6 +2,9 @@
 
 namespace Volo.Abp.DependencyInjection
 {
+    /// <summary>
+    /// 暴露服务属性
+    /// </summary>
     public class ExposeServicesAttribute : Attribute, IExposedServiceTypesProvider
     {
         public Type[] ExposedServiceTypes { get; }

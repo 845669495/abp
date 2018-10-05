@@ -6,8 +6,18 @@ using Volo.Abp.Modularity.PlugIns;
 
 namespace Volo.Abp.Modularity
 {
+    /// <summary>
+    /// 模块加载器
+    /// </summary>
     public class ModuleLoader : IModuleLoader
     {
+        /// <summary>
+        /// 加载模块
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="startupModuleType"></param>
+        /// <param name="plugInSources"></param>
+        /// <returns></returns>
         public IAbpModuleDescriptor[] LoadModules(
             IServiceCollection services,
             Type startupModuleType,
@@ -38,6 +48,13 @@ namespace Volo.Abp.Modularity
             return modules.Cast<IAbpModuleDescriptor>().ToList();
         }
 
+        /// <summary>
+        /// 填充模块
+        /// </summary>
+        /// <param name="modules"></param>
+        /// <param name="services"></param>
+        /// <param name="startupModuleType"></param>
+        /// <param name="plugInSources"></param>
         protected virtual void FillModules(
             List<AbpModuleDescriptor> modules,
             IServiceCollection services,
@@ -70,6 +87,12 @@ namespace Volo.Abp.Modularity
             }
         }
 
+        /// <summary>
+        /// 根据依赖排序
+        /// </summary>
+        /// <param name="modules"></param>
+        /// <param name="startupModuleType"></param>
+        /// <returns></returns>
         protected virtual List<IAbpModuleDescriptor> SortByDependency(List<IAbpModuleDescriptor> modules, Type startupModuleType)
         {
             var sortedModules = modules.SortByDependencies(m => m.Dependencies);
@@ -77,11 +100,24 @@ namespace Volo.Abp.Modularity
             return sortedModules;
         }
 
+        /// <summary>
+        /// 创建模块描述
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="moduleType"></param>
+        /// <param name="isLoadedAsPlugIn"></param>
+        /// <returns></returns>
         protected virtual AbpModuleDescriptor CreateModuleDescriptor(IServiceCollection services, Type moduleType, bool isLoadedAsPlugIn = false)
         {
             return new AbpModuleDescriptor(moduleType, CreateAndRegisterModule(services, moduleType), isLoadedAsPlugIn);
         }
 
+        /// <summary>
+        /// 创建并注册模块
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="moduleType"></param>
+        /// <returns></returns>
         protected virtual IAbpModule CreateAndRegisterModule(IServiceCollection services, Type moduleType)
         {
             var module = (IAbpModule)Activator.CreateInstance(moduleType);
@@ -89,6 +125,11 @@ namespace Volo.Abp.Modularity
             return module;
         }
 
+        /// <summary>
+        /// 配置服务
+        /// </summary>
+        /// <param name="modules"></param>
+        /// <param name="services"></param>
         protected virtual void ConfigureServices(List<IAbpModuleDescriptor> modules, IServiceCollection services)
         {
             var context = new ServiceConfigurationContext(services);
@@ -137,6 +178,11 @@ namespace Volo.Abp.Modularity
             }
         }
 
+        /// <summary>
+        /// 设置依赖关系
+        /// </summary>
+        /// <param name="modules"></param>
+        /// <param name="module"></param>
         protected virtual void SetDependencies(List<AbpModuleDescriptor> modules, AbpModuleDescriptor module)
         {
             foreach (var dependedModuleType in AbpModuleHelper.FindDependedModuleTypes(module.Type))

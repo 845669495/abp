@@ -4,6 +4,9 @@ using JetBrains.Annotations;
 
 namespace Volo.Abp.Aspects
 {
+    /// <summary>
+    /// 横切问题
+    /// </summary>
     public static class AbpCrossCuttingConcerns
     {
         //TODO: Move these constants to their own assemblies!

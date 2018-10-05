@@ -40,6 +40,13 @@ namespace Volo.Abp.Reflection
         }
 
         //TODO: Summary
+
+        /// <summary>
+        /// 获取实现该泛型的类型
+        /// </summary>
+        /// <param name="givenType">入参类型</param>
+        /// <param name="genericType">泛型类型</param>
+        /// <returns>实现该泛型的类型</returns>
         public static List<Type> GetImplementedGenericTypes(Type givenType, Type genericType)
         {
             var result = new List<Type>();
@@ -47,6 +54,12 @@ namespace Volo.Abp.Reflection
             return result;
         }
 
+        /// <summary>
+        /// 添加实现该泛型的类型
+        /// </summary>
+        /// <param name="result">实现该泛型的类型</param>
+        /// <param name="givenType">入参类型</param>
+        /// <param name="genericType">泛型类型</param>
         private static void AddImplementedGenericTypes(List<Type> result, Type givenType, Type genericType)
         {
             var givenTypeInfo = givenType.GetTypeInfo();

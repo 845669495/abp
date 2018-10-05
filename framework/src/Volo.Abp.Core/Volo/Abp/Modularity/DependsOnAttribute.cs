@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Volo.Abp.Modularity
 {
     /// <summary>
-    /// Used to define dependencies of a type.
+    /// 用于定义类型的依赖关系
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class DependsOnAttribute : Attribute, IDependedTypesProvider

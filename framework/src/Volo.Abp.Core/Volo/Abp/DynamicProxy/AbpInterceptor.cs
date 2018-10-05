@@ -2,6 +2,9 @@
 
 namespace Volo.Abp.DynamicProxy
 {
+    /// <summary>
+    /// 拦截器
+    /// </summary>
 	public abstract class AbpInterceptor : IAbpInterceptor
 	{
 		public abstract void Intercept(IAbpMethodInvocation invocation);
