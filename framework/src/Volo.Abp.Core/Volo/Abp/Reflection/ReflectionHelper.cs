@@ -10,10 +10,10 @@ namespace Volo.Abp.Reflection
     {
         //TODO: Ehhance summary
         /// <summary>
-        /// Checks whether <paramref name="givenType"/> implements/inherits <paramref name="genericType"/>.
+        /// 检查<paramref name ="givenType"/>是否实现/继承<paramref name ="genericType"/>
         /// </summary>
-        /// <param name="givenType">Type to check</param>
-        /// <param name="genericType">Generic type</param>
+        /// <param name="givenType">传入类型</param>
+        /// <param name="genericType">泛型</param>
         public static bool IsAssignableToGenericType(Type givenType, Type genericType)
         {
             var givenTypeInfo = givenType.GetTypeInfo();

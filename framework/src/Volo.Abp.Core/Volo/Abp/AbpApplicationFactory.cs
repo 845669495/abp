@@ -5,6 +5,9 @@ using Volo.Abp.Modularity;
 
 namespace Volo.Abp
 {
+    /// <summary>
+    /// abp应用工厂
+    /// </summary>
     public static class AbpApplicationFactory
     {
         public static IAbpApplicationWithInternalServiceProvider Create<TStartupModule>(

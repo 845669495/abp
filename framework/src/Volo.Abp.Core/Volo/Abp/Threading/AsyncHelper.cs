@@ -7,12 +7,12 @@ using Nito.AsyncEx;
 namespace Volo.Abp.Threading
 {
     /// <summary>
-    /// Provides some helper methods to work with async methods.
+    /// 提供一些辅助方法来处理异步方法
     /// </summary>
     public static class AsyncHelper
     {
         /// <summary>
-        /// Checks if given method is an async method.
+        /// 检查给定方法是否为异步方法
         /// </summary>
         /// <param name="method">A method to check</param>
         public static bool IsAsync([NotNull] this MethodInfo method)
@@ -50,7 +50,7 @@ namespace Volo.Abp.Threading
         }
 
         /// <summary>
-        /// Runs a async method synchronously.
+        /// 同步运行异步方法
         /// </summary>
         /// <param name="func">A function that returns a result</param>
         /// <typeparam name="TResult">Result type</typeparam>
@@ -61,7 +61,7 @@ namespace Volo.Abp.Threading
         }
 
         /// <summary>
-        /// Runs a async method synchronously.
+        /// 同步运行异步方法
         /// </summary>
         /// <param name="action">An async action</param>
         public static void RunSync(Func<Task> action)
